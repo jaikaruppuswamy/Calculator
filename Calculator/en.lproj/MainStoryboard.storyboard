@@ -392,14 +392,22 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="piPressed:" destination="2" eventType="touchUpInside" id="dud-Go-flX"/>
+                                    <action selector="ePressed:" destination="2" eventType="touchUpInside" id="pxV-eR-zZh"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="Aqk-3M-6Hp">
+                                <rect key="frame" x="20" y="5" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="display" destination="f7P-be-jI0" id="IPN-UU-B3G"/>
+                        <outlet property="history" destination="Aqk-3M-6Hp" id="jus-VR-9ko"/>
                     </connections>
                 </viewController>
             </objects>
@@ -412,6 +420,7 @@
             <relationships>
                 <relationship kind="action" name="enterPressed"/>
                 <relationship kind="outlet" name="display" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="history" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>

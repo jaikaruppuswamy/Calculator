@@ -10,6 +10,8 @@
 
 @interface CalculatorViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *history;
 @property (weak, nonatomic) IBOutlet UILabel *display;
 - (IBAction) enterPressed;
+
 @end
