@@ -29,6 +29,10 @@
 - (IBAction)digitPressed:(UIButton *)sender {
     NSString *digit = sender.currentTitle;
     if (self.userTyping) {
+        if ([digit isEqualToString:@"."]) {
+            NSRange range = [self.display.text rangeOfString:@"."];
+            if (range.length != 0) return;
+        }
         self.display.text = [self.display.text stringByAppendingString:digit];
     } else {
         self.display.text = digit;
@@ -36,19 +40,28 @@
     }
 }
 - (IBAction)operationPressed:(UIButton *)sender {
-    if (self.userTyping) {
-        [self enterPressed];
-    }
+    if (self.userTyping) [self enterPressed];
     double result = [self.model performOperation:sender.currentTitle];
     NSString *resultString = [NSString stringWithFormat:@"%g", result];
     self.display.text = resultString;
 }
 
 - (IBAction)enterPressed {
-    NSLog(@"Entering enterPressed");
     [self.model pushOperand:[self.display.text doubleValue]];
-    NSLog(@"operand %g was pushed", self.display.text);
     self.userTyping = NO;
-    NSLog(@"Leaving enterPressed");
+}
+- (IBAction)piPressed {
+    //if (self.userTyping) [self enterPressed];
+}
+- (IBAction)backspacePressed {
+    if (self.userTyping) {
+        int toIndex = [self.display.text length] - 1;
+        self.display.text = [self.display.text substringToIndex:toIndex];
+    }
+}
+- (IBAction)clearPressed {
+    self.display.text = @"0";
+    self.userTyping = FALSE;
+    [self.model clearAll];
 }
 @end
