@@ -10,8 +10,13 @@
 
 @interface CalculatorModel : NSObject
 
+@property (readonly) id program;
+
 - (void)pushOperand:(double)operand;
 - (double)performOperation:(NSString *)operation;
 - (void)clearAll;
+
++ (double)runProgram:(id)program;
++ (NSString *)descriptionOfProgram:(id)program;
 
 @end
