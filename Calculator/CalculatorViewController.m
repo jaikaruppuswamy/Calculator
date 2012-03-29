@@ -66,7 +66,9 @@
 - (IBAction)backspacePressed {
     if (self.userTyping) {
         int toIndex = [self.display.text length] - 1;
-        self.display.text = [self.display.text substringToIndex:toIndex];
+        if (toIndex != -1) {
+            self.display.text = [self.display.text substringToIndex:toIndex];
+        }
     }
 }
 

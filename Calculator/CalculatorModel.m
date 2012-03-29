@@ -15,14 +15,14 @@
 
 @synthesize programStack = _programStack;
 
-- (NSMutableArray *)operandStack {
+- (NSMutableArray *)programStack {
     if (_programStack == nil)
         _programStack = [[NSMutableArray alloc] init];
     return _programStack;
 }
 
 - (id)program {
-    return [self.program copy];
+    return [self.programStack copy];
 }
 
 - (void)pushOperand:(double)operand {
@@ -43,7 +43,7 @@
 }
 
 - (void)clearAll {
-    [self.operandStack removeAllObjects];
+    [self.programStack removeAllObjects];
 }
 
 + (NSString *)descriptionOfProgram:(id)program {

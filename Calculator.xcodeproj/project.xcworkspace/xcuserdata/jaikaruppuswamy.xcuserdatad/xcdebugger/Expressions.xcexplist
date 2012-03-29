@@ -13,5 +13,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "-[CalculatorModel performOperation:]:CalculatorModel.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.program">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
